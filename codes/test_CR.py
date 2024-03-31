@@ -28,6 +28,12 @@ def test(CR_net, opts):
         file_name = inputs['file_name'][0]
 
         pred_cloudfree_data = CR_net(cloudy_data, SAR_data)
+
+        print(f"This is model's prediction:{pred_cloudfree_data}")
+        print(f"Type of the above object:{type(pred_cloudfree_data)}")
+        
+        print(f"This is ground truth:{cloudfree_data}")
+        print(f"Type of the above object:{type(cloudfree_data)}")
        
         psnr_13 = PSNR(pred_cloudfree_data, cloudfree_data)
 
