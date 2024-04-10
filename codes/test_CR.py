@@ -37,7 +37,7 @@ def test(CR_net, opts):
 
         print(f"Shape of output is:{pred_cloudfree_data.shape}")
 
-        pred_cloudfree_data = pred_cloudfree_data.squeeze(1)
+        pred_cloudfree_data = torch.squeeze(pred_cloudfree_data)
 
         # pred_cloudfree_data = pred_cloudfree_data.
         # torch.index_select(A, dim=2, index=torch.tensor([0,1,2]))
