@@ -48,6 +48,7 @@ def test(CR_net, opts):
         output_image = np.transpose(output_image.cpu().numpy(),(2,1,0))
 
         plt.imshow(output_image)
+        plt.savefig("sample.jpg")
         plt.show()
        
         psnr_13 = PSNR(pred_cloudfree_data, cloudfree_data)
