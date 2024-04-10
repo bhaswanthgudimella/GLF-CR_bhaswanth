@@ -45,7 +45,7 @@ def test(CR_net, opts):
         # torch.index_select(A, dim=2, index=torch.tensor([0,1,2]))
 
         output_image = pred_cloudfree_data[[3,2,1],:,:]
-        output_image = np.transpose(output_image.numpy(),(2,0,1))
+        output_image = np.transpose(output_image.cpu().numpy(),(2,0,1))
 
         plt.imshow(output_image)
         plt.show()
