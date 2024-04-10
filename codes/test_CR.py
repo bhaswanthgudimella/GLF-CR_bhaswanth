@@ -42,7 +42,7 @@ def test(CR_net, opts):
         # pred_cloudfree_data = pred_cloudfree_data.
         # torch.index_select(A, dim=2, index=torch.tensor([0,1,2]))
 
-        output_image = torch.select(pred_cloudfree_data,dim=0,index=torch.tensor([2,3,4))
+        output_image = torch.select(pred_cloudfree_data,dim=0,index=torch.tensor([2,3,4]))
         output_image = output_image.numpy()
 
         print(output_image.shape)
