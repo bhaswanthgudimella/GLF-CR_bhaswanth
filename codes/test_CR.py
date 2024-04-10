@@ -1,6 +1,8 @@
 import os
 import torch
 import argparse
+import numpy as np
+import matplotlib.pyplot as plt
 
 from metrics import PSNR, SSIM
 
@@ -43,9 +45,10 @@ def test(CR_net, opts):
         # torch.index_select(A, dim=2, index=torch.tensor([0,1,2]))
 
         output_image = pred_cloudfree_data[[3,2,1],:,:]
-        output_image = output_image.numpy()
+        output_image = np.transpose(output_image.numpy(),(2,0,1))
 
-        print(output_image.shape)
+        plt.imshow(output_image)
+        plt.show()
        
         psnr_13 = PSNR(pred_cloudfree_data, cloudfree_data)
 
