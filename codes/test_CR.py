@@ -36,6 +36,16 @@ def test(CR_net, opts):
         # print(f"Type of the above object:{type(cloudfree_data)}")
 
         print(f"Shape of output is:{pred_cloudfree_data.shape}")
+
+        pred_cloudfree_data = pred_cloudfree_data.squeeze(1)
+
+        # pred_cloudfree_data = pred_cloudfree_data.
+        # torch.index_select(A, dim=2, index=torch.tensor([0,1,2]))
+
+        output_image = torch.select(pred_cloudfree_data,dim=0,index=torch.tensor([2,3,4))
+        output_image = output_image.numpy()
+
+        print(output_image.shape)
        
         psnr_13 = PSNR(pred_cloudfree_data, cloudfree_data)
 
