@@ -35,7 +35,7 @@ def test(CR_net, opts):
         # print(f"This is ground truth:{cloudfree_data}")
         # print(f"Type of the above object:{type(cloudfree_data)}")
 
-        print(f"This is model prediction:{pred_cloudfree_data.shape}")
+        print(f"Shape of output is:{pred_cloudfree_data.shape}")
        
         psnr_13 = PSNR(pred_cloudfree_data, cloudfree_data)
 
